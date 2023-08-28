@@ -1,0 +1,111 @@
+---
+title: "FinalProject"
+author: "Dannelle Charles"
+format: html
+---
+
+## Introduction
+
+The data utilized for this project was from FiveThirtyEight. The data consist of congress members that were incumbent during the Truman administration to the early Obama administration. The purpose of this analysis was to look at the characteristics of congress members from the late Clinton administration to the early Obama administration.
+
+## Setting up
+
+```{r}
+library (gtsummary)
+library (broom)
+library (here)
+library (renv)
+library (tidyverse)
+library (here)
+#| include: false
+
+renv:snapshot()
+
+data <- read.csv(here::here("congress-age", "congress-terms.csv"))
+
+```
+
+## Creating a new data set for Members in Congress in Office from 2000 and Later
+
+```{r}
+congress2000 <- subset(data, termstart > as.Date("1999-01-06"))
+incumbentcongress <- congress2000[congress2000$incumbent=="Yes",]
+
+summary(incumbentcongress$age)
+table(incumbentcongress$congress)
+```
+
+## Part I: Table of Descriptive Statistics Using gtsummary
+
+```{r}
+#| label: tbl-one
+#| tbl-cap: "Descriptive Statistics of Congress Members"
+#| output-location: slide
+
+table1 <- tbl_summary(
+  incumbentcongress,
+  by = party,
+  percent = "row",
+  include= c(age,chamber,congress),
+  label=list(
+    age ~ "Age at Start of Term",
+    chamber ~ "Chamber",
+    congress ~ "Congress Meeting"
+),
+  missing_text = "Missing") |>
+  bold_labels() |>
+  modify_header(label='**Variables**',
+                stat_1 = '**Democrat**',
+                stat_2 = '**Independent**',
+                stat_3 = '**Independent Democrat**',
+                stat_4 = '**Republican**'
+                )
+table1
+
+meeting107_demo <- inline_text(table1, variable="congress", level="107", column="D")
+
+meeting107_rep <- inline_text(table1, variable="congress", level="107", column="R")
+
+meeting107_ind <- inline_text(table1, variable="congress", level="107", column="I")
+```
+
+@tbl-one displays the median age of congress members and the percentage of congress members during the 108-113 meetings by political party.
+
+The 107th Congress meeting consisted of (`r meeting107_demo`) Democrats, (`r meeting107_rep`) Republicans, and (`r meeting107_ind`) Independents, making the split of power between Democrats and Republican even. Prior to the current 117th Congress meeting, the 107th meeting in 2001 was the last time there was an even split of control in the U.S. Senate.
+
+## Part II: Regression using age (IV), chamber, meeting, and party (DV)
+
+```{r}
+linear_model <- lm(age ~ chamber + party + congress,
+                   data=incumbentcongress)
+
+tbl_regression(
+  linear_model, 
+  intercept = TRUE,
+  label = list(
+    chamber ~ "Chamber",
+    party ~ "Political Party",
+    congress ~ "Congress Meeting"
+  ))
+```
+
+## Part III/IV: Make Histogram of the Ages of Congress by Political party & using a Function to Calculate the Mean & Standard Deviation of Congress Members Age by Meeting
+
+```{r}
+#| label: fig-hist
+#| fig-cap: "Histogram of the Ages of Congress Members"
+#| output-location: slide
+
+hist(incumbentcongress$age)
+
+stats <- list(n=nrow(incumbentcongress),
+              mean_age=mean(incumbentcongress$age))
+
+stats2 <- list(n=nrow(incumbentcongress),
+              std_age=sd(incumbentcongress$age))
+
+```
+
+@fig-hist presents a normal distribution of the ages of congress members.
+
+The mean age of Congress members is (`r stats$meanage`) and the standard deviation of Congress members is (`r stats2$stdage`)
