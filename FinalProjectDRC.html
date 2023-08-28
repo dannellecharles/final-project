@@ -108,13 +108,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setting-up" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up">Setting up</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (gtsummary)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (broom)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (gtsummary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>#Uighur</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (broom)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>here() starts at /Users/dannellecharles/Library/CloudStorage/OneDrive-Personal/Introduction to EPI590R/final-project</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (renv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (renv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'renv'</code></pre>
@@ -134,7 +137,7 @@ Attaching package: 'renv'</code></pre>
 
     autoload, load, remove</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.2     ✔ readr     2.1.4
@@ -150,24 +153,24 @@ Attaching package: 'renv'</code></pre>
 ✖ purrr::modify() masks renv::modify()
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (here)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"congress-age"</span>, <span class="st">"congress-terms.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (here)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"congress-age"</span>, <span class="st">"congress-terms.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="creating-a-new-data-set-for-members-in-congress-in-office-from-2000-and-later" class="level2">
 <h2 class="anchored" data-anchor-id="creating-a-new-data-set-for-members-in-congress-in-office-from-2000-and-later">Creating a new data set for Members in Congress in Office from 2000 and Later</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>congress2000 <span class="ot">&lt;-</span> <span class="fu">subset</span>(data, termstart <span class="sc">&gt;</span> <span class="fu">as.Date</span>(<span class="st">"1999-01-06"</span>))</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>incumbentcongress <span class="ot">&lt;-</span> congress2000[congress2000<span class="sc">$</span>incumbent<span class="sc">==</span><span class="st">"Yes"</span>,]</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(incumbentcongress<span class="sc">$</span>age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>congress2000 <span class="ot">&lt;-</span> <span class="fu">subset</span>(data, termstart <span class="sc">&gt;</span> <span class="fu">as.Date</span>(<span class="st">"1999-01-06"</span>))</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>incumbentcongress <span class="ot">&lt;-</span> congress2000[congress2000<span class="sc">$</span>incumbent<span class="sc">==</span><span class="st">"Yes"</span>,]</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(incumbentcongress<span class="sc">$</span>age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   28.40   51.00   57.90   57.91   64.50   98.10 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(incumbentcongress<span class="sc">$</span>congress)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(incumbentcongress<span class="sc">$</span>congress)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 107 108 109 110 111 112 113 
@@ -178,45 +181,45 @@ Attaching package: 'renv'</code></pre>
 <section id="part-i-table-of-descriptive-statistics-using-gtsummary" class="level2">
 <h2 class="anchored" data-anchor-id="part-i-table-of-descriptive-statistics-using-gtsummary">Part I: Table of Descriptive Statistics Using gtsummary</h2>
 <div class="cell" data-output-location="slide">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>table1 <span class="ot">&lt;-</span> <span class="fu">tbl_summary</span>(</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  incumbentcongress,</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">by =</span> party,</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">percent =</span> <span class="st">"row"</span>,</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">include=</span> <span class="fu">c</span>(age,chamber,congress),</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">label=</span><span class="fu">list</span>(</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    age <span class="sc">~</span> <span class="st">"Age at Start of Term"</span>,</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    chamber <span class="sc">~</span> <span class="st">"Chamber"</span>,</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    congress <span class="sc">~</span> <span class="st">"Congress Meeting"</span></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>),</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">missing_text =</span> <span class="st">"Missing"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bold_labels</span>() <span class="sc">|&gt;</span></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">modify_header</span>(<span class="at">label=</span><span class="st">'**Variables**'</span>,</span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>                <span class="at">stat_1 =</span> <span class="st">'**Democrat**'</span>,</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>                <span class="at">stat_2 =</span> <span class="st">'**Independent**'</span>,</span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>                <span class="at">stat_3 =</span> <span class="st">'**Independent Democrat**'</span>,</span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>                <span class="at">stat_4 =</span> <span class="st">'**Republican**'</span></span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>                )</span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>table1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>table1 <span class="ot">&lt;-</span> <span class="fu">tbl_summary</span>(</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  incumbentcongress,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">by =</span> party,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">percent =</span> <span class="st">"row"</span>,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">include=</span> <span class="fu">c</span>(age,chamber,congress),</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">label=</span><span class="fu">list</span>(</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    age <span class="sc">~</span> <span class="st">"Age at Start of Term"</span>,</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    chamber <span class="sc">~</span> <span class="st">"Chamber"</span>,</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    congress <span class="sc">~</span> <span class="st">"Congress Meeting"</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>),</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">missing_text =</span> <span class="st">"Missing"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bold_labels</span>() <span class="sc">|&gt;</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">modify_header</span>(<span class="at">label=</span><span class="st">'**Variables**'</span>,</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>                <span class="at">stat_1 =</span> <span class="st">'**Democrat**'</span>,</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>                <span class="at">stat_2 =</span> <span class="st">'**Independent**'</span>,</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>                <span class="at">stat_3 =</span> <span class="st">'**Independent Democrat**'</span>,</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>                <span class="at">stat_4 =</span> <span class="st">'**Republican**'</span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>                )</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>table1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="tbl-one" class="anchored">
 
-<div id="refappnisl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#refappnisl table {
+<div id="zbxneatzhi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zbxneatzhi table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#refappnisl thead, #refappnisl tbody, #refappnisl tfoot, #refappnisl tr, #refappnisl td, #refappnisl th {
+#zbxneatzhi thead, #zbxneatzhi tbody, #zbxneatzhi tfoot, #zbxneatzhi tr, #zbxneatzhi td, #zbxneatzhi th {
   border-style: none;
 }
 
-#refappnisl p {
+#zbxneatzhi p {
   margin: 0;
   padding: 0;
 }
 
-#refappnisl .gt_table {
+#zbxneatzhi .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -242,12 +245,12 @@ Attaching package: 'renv'</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#refappnisl .gt_caption {
+#zbxneatzhi .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#refappnisl .gt_title {
+#zbxneatzhi .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -259,7 +262,7 @@ Attaching package: 'renv'</code></pre>
   border-bottom-width: 0;
 }
 
-#refappnisl .gt_subtitle {
+#zbxneatzhi .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -271,7 +274,7 @@ Attaching package: 'renv'</code></pre>
   border-top-width: 0;
 }
 
-#refappnisl .gt_heading {
+#zbxneatzhi .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -283,13 +286,13 @@ Attaching package: 'renv'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#refappnisl .gt_bottom_border {
+#zbxneatzhi .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#refappnisl .gt_col_headings {
+#zbxneatzhi .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -304,7 +307,7 @@ Attaching package: 'renv'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#refappnisl .gt_col_heading {
+#zbxneatzhi .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -324,7 +327,7 @@ Attaching package: 'renv'</code></pre>
   overflow-x: hidden;
 }
 
-#refappnisl .gt_column_spanner_outer {
+#zbxneatzhi .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -336,15 +339,15 @@ Attaching package: 'renv'</code></pre>
   padding-right: 4px;
 }
 
-#refappnisl .gt_column_spanner_outer:first-child {
+#zbxneatzhi .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#refappnisl .gt_column_spanner_outer:last-child {
+#zbxneatzhi .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#refappnisl .gt_column_spanner {
+#zbxneatzhi .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -356,11 +359,11 @@ Attaching package: 'renv'</code></pre>
   width: 100%;
 }
 
-#refappnisl .gt_spanner_row {
+#zbxneatzhi .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#refappnisl .gt_group_heading {
+#zbxneatzhi .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -386,7 +389,7 @@ Attaching package: 'renv'</code></pre>
   text-align: left;
 }
 
-#refappnisl .gt_empty_group_heading {
+#zbxneatzhi .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -401,15 +404,15 @@ Attaching package: 'renv'</code></pre>
   vertical-align: middle;
 }
 
-#refappnisl .gt_from_md > :first-child {
+#zbxneatzhi .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#refappnisl .gt_from_md > :last-child {
+#zbxneatzhi .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#refappnisl .gt_row {
+#zbxneatzhi .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -428,7 +431,7 @@ Attaching package: 'renv'</code></pre>
   overflow-x: hidden;
 }
 
-#refappnisl .gt_stub {
+#zbxneatzhi .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -441,7 +444,7 @@ Attaching package: 'renv'</code></pre>
   padding-right: 5px;
 }
 
-#refappnisl .gt_stub_row_group {
+#zbxneatzhi .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -455,15 +458,15 @@ Attaching package: 'renv'</code></pre>
   vertical-align: top;
 }
 
-#refappnisl .gt_row_group_first td {
+#zbxneatzhi .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#refappnisl .gt_row_group_first th {
+#zbxneatzhi .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#refappnisl .gt_summary_row {
+#zbxneatzhi .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -473,16 +476,16 @@ Attaching package: 'renv'</code></pre>
   padding-right: 5px;
 }
 
-#refappnisl .gt_first_summary_row {
+#zbxneatzhi .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#refappnisl .gt_first_summary_row.thick {
+#zbxneatzhi .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#refappnisl .gt_last_summary_row {
+#zbxneatzhi .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -492,7 +495,7 @@ Attaching package: 'renv'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#refappnisl .gt_grand_summary_row {
+#zbxneatzhi .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -502,7 +505,7 @@ Attaching package: 'renv'</code></pre>
   padding-right: 5px;
 }
 
-#refappnisl .gt_first_grand_summary_row {
+#zbxneatzhi .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -512,7 +515,7 @@ Attaching package: 'renv'</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#refappnisl .gt_last_grand_summary_row_top {
+#zbxneatzhi .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -522,11 +525,11 @@ Attaching package: 'renv'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#refappnisl .gt_striped {
+#zbxneatzhi .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#refappnisl .gt_table_body {
+#zbxneatzhi .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -535,7 +538,7 @@ Attaching package: 'renv'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#refappnisl .gt_footnotes {
+#zbxneatzhi .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -549,7 +552,7 @@ Attaching package: 'renv'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#refappnisl .gt_footnote {
+#zbxneatzhi .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -558,7 +561,7 @@ Attaching package: 'renv'</code></pre>
   padding-right: 5px;
 }
 
-#refappnisl .gt_sourcenotes {
+#zbxneatzhi .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -572,7 +575,7 @@ Attaching package: 'renv'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#refappnisl .gt_sourcenote {
+#zbxneatzhi .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -580,63 +583,63 @@ Attaching package: 'renv'</code></pre>
   padding-right: 5px;
 }
 
-#refappnisl .gt_left {
+#zbxneatzhi .gt_left {
   text-align: left;
 }
 
-#refappnisl .gt_center {
+#zbxneatzhi .gt_center {
   text-align: center;
 }
 
-#refappnisl .gt_right {
+#zbxneatzhi .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#refappnisl .gt_font_normal {
+#zbxneatzhi .gt_font_normal {
   font-weight: normal;
 }
 
-#refappnisl .gt_font_bold {
+#zbxneatzhi .gt_font_bold {
   font-weight: bold;
 }
 
-#refappnisl .gt_font_italic {
+#zbxneatzhi .gt_font_italic {
   font-style: italic;
 }
 
-#refappnisl .gt_super {
+#zbxneatzhi .gt_super {
   font-size: 65%;
 }
 
-#refappnisl .gt_footnote_marks {
+#zbxneatzhi .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#refappnisl .gt_asterisk {
+#zbxneatzhi .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#refappnisl .gt_indent_1 {
+#zbxneatzhi .gt_indent_1 {
   text-indent: 5px;
 }
 
-#refappnisl .gt_indent_2 {
+#zbxneatzhi .gt_indent_2 {
   text-indent: 10px;
 }
 
-#refappnisl .gt_indent_3 {
+#zbxneatzhi .gt_indent_3 {
   text-indent: 15px;
 }
 
-#refappnisl .gt_indent_4 {
+#zbxneatzhi .gt_indent_4 {
   text-indent: 20px;
 }
 
-#refappnisl .gt_indent_5 {
+#zbxneatzhi .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -723,11 +726,11 @@ Attaching package: 'renv'</code></pre>
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>meeting107_demo <span class="ot">&lt;-</span> <span class="fu">inline_text</span>(table1, <span class="at">variable=</span><span class="st">"congress"</span>, <span class="at">level=</span><span class="st">"107"</span>, <span class="at">column=</span><span class="st">"D"</span>)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>meeting107_rep <span class="ot">&lt;-</span> <span class="fu">inline_text</span>(table1, <span class="at">variable=</span><span class="st">"congress"</span>, <span class="at">level=</span><span class="st">"107"</span>, <span class="at">column=</span><span class="st">"R"</span>)</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>meeting107_ind <span class="ot">&lt;-</span> <span class="fu">inline_text</span>(table1, <span class="at">variable=</span><span class="st">"congress"</span>, <span class="at">level=</span><span class="st">"107"</span>, <span class="at">column=</span><span class="st">"I"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>meeting107_demo <span class="ot">&lt;-</span> <span class="fu">inline_text</span>(table1, <span class="at">variable=</span><span class="st">"congress"</span>, <span class="at">level=</span><span class="st">"107"</span>, <span class="at">column=</span><span class="st">"D"</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>meeting107_rep <span class="ot">&lt;-</span> <span class="fu">inline_text</span>(table1, <span class="at">variable=</span><span class="st">"congress"</span>, <span class="at">level=</span><span class="st">"107"</span>, <span class="at">column=</span><span class="st">"R"</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>meeting107_ind <span class="ot">&lt;-</span> <span class="fu">inline_text</span>(table1, <span class="at">variable=</span><span class="st">"congress"</span>, <span class="at">level=</span><span class="st">"107"</span>, <span class="at">column=</span><span class="st">"I"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><a href="#tbl-one">Table&nbsp;1</a> displays the median age of congress members and the percentage of congress members during the 108-113 meetings by political party.</p>
 <p>The 107th Congress meeting consisted of (240 (50%)) Democrats, (241 (50%)) Republicans, and (3 (0.6%)) Independents, making the split of power between Democrats and Republican even. Prior to the current 117th Congress meeting, the 107th meeting in 2001 was the last time there was an even split of control in the U.S. Senate.</p>
@@ -735,36 +738,36 @@ Attaching package: 'renv'</code></pre>
 <section id="part-ii-regression-using-age-iv-chamber-meeting-and-party-dv" class="level2">
 <h2 class="anchored" data-anchor-id="part-ii-regression-using-age-iv-chamber-meeting-and-party-dv">Part II: Regression using age (IV), chamber, meeting, and party (DV)</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>linear_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(age <span class="sc">~</span> chamber <span class="sc">+</span> party <span class="sc">+</span> congress,</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">data=</span>incumbentcongress)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_regression</span>(</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  linear_model, </span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">intercept =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="fu">list</span>(</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    chamber <span class="sc">~</span> <span class="st">"Chamber"</span>,</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    party <span class="sc">~</span> <span class="st">"Political Party"</span>,</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    congress <span class="sc">~</span> <span class="st">"Congress Meeting"</span></span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>linear_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(age <span class="sc">~</span> chamber <span class="sc">+</span> party <span class="sc">+</span> congress,</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">data=</span>incumbentcongress)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_regression</span>(</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  linear_model, </span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">intercept =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="fu">list</span>(</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    chamber <span class="sc">~</span> <span class="st">"Chamber"</span>,</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    party <span class="sc">~</span> <span class="st">"Political Party"</span>,</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    congress <span class="sc">~</span> <span class="st">"Congress Meeting"</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="rhkwontwts" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rhkwontwts table {
+<div id="bjhyknncsk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bjhyknncsk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rhkwontwts thead, #rhkwontwts tbody, #rhkwontwts tfoot, #rhkwontwts tr, #rhkwontwts td, #rhkwontwts th {
+#bjhyknncsk thead, #bjhyknncsk tbody, #bjhyknncsk tfoot, #bjhyknncsk tr, #bjhyknncsk td, #bjhyknncsk th {
   border-style: none;
 }
 
-#rhkwontwts p {
+#bjhyknncsk p {
   margin: 0;
   padding: 0;
 }
 
-#rhkwontwts .gt_table {
+#bjhyknncsk .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -790,12 +793,12 @@ Attaching package: 'renv'</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#rhkwontwts .gt_caption {
+#bjhyknncsk .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rhkwontwts .gt_title {
+#bjhyknncsk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -807,7 +810,7 @@ Attaching package: 'renv'</code></pre>
   border-bottom-width: 0;
 }
 
-#rhkwontwts .gt_subtitle {
+#bjhyknncsk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -819,7 +822,7 @@ Attaching package: 'renv'</code></pre>
   border-top-width: 0;
 }
 
-#rhkwontwts .gt_heading {
+#bjhyknncsk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -831,13 +834,13 @@ Attaching package: 'renv'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#rhkwontwts .gt_bottom_border {
+#bjhyknncsk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rhkwontwts .gt_col_headings {
+#bjhyknncsk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -852,7 +855,7 @@ Attaching package: 'renv'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#rhkwontwts .gt_col_heading {
+#bjhyknncsk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -872,7 +875,7 @@ Attaching package: 'renv'</code></pre>
   overflow-x: hidden;
 }
 
-#rhkwontwts .gt_column_spanner_outer {
+#bjhyknncsk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -884,15 +887,15 @@ Attaching package: 'renv'</code></pre>
   padding-right: 4px;
 }
 
-#rhkwontwts .gt_column_spanner_outer:first-child {
+#bjhyknncsk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rhkwontwts .gt_column_spanner_outer:last-child {
+#bjhyknncsk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rhkwontwts .gt_column_spanner {
+#bjhyknncsk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -904,11 +907,11 @@ Attaching package: 'renv'</code></pre>
   width: 100%;
 }
 
-#rhkwontwts .gt_spanner_row {
+#bjhyknncsk .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rhkwontwts .gt_group_heading {
+#bjhyknncsk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -934,7 +937,7 @@ Attaching package: 'renv'</code></pre>
   text-align: left;
 }
 
-#rhkwontwts .gt_empty_group_heading {
+#bjhyknncsk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -949,15 +952,15 @@ Attaching package: 'renv'</code></pre>
   vertical-align: middle;
 }
 
-#rhkwontwts .gt_from_md > :first-child {
+#bjhyknncsk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rhkwontwts .gt_from_md > :last-child {
+#bjhyknncsk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rhkwontwts .gt_row {
+#bjhyknncsk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -976,7 +979,7 @@ Attaching package: 'renv'</code></pre>
   overflow-x: hidden;
 }
 
-#rhkwontwts .gt_stub {
+#bjhyknncsk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -989,7 +992,7 @@ Attaching package: 'renv'</code></pre>
   padding-right: 5px;
 }
 
-#rhkwontwts .gt_stub_row_group {
+#bjhyknncsk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1003,15 +1006,15 @@ Attaching package: 'renv'</code></pre>
   vertical-align: top;
 }
 
-#rhkwontwts .gt_row_group_first td {
+#bjhyknncsk .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rhkwontwts .gt_row_group_first th {
+#bjhyknncsk .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rhkwontwts .gt_summary_row {
+#bjhyknncsk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1021,16 +1024,16 @@ Attaching package: 'renv'</code></pre>
   padding-right: 5px;
 }
 
-#rhkwontwts .gt_first_summary_row {
+#bjhyknncsk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rhkwontwts .gt_first_summary_row.thick {
+#bjhyknncsk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rhkwontwts .gt_last_summary_row {
+#bjhyknncsk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1040,7 +1043,7 @@ Attaching package: 'renv'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#rhkwontwts .gt_grand_summary_row {
+#bjhyknncsk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1050,7 +1053,7 @@ Attaching package: 'renv'</code></pre>
   padding-right: 5px;
 }
 
-#rhkwontwts .gt_first_grand_summary_row {
+#bjhyknncsk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1060,7 +1063,7 @@ Attaching package: 'renv'</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#rhkwontwts .gt_last_grand_summary_row_top {
+#bjhyknncsk .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1070,11 +1073,11 @@ Attaching package: 'renv'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#rhkwontwts .gt_striped {
+#bjhyknncsk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rhkwontwts .gt_table_body {
+#bjhyknncsk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1083,7 +1086,7 @@ Attaching package: 'renv'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#rhkwontwts .gt_footnotes {
+#bjhyknncsk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1097,7 +1100,7 @@ Attaching package: 'renv'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#rhkwontwts .gt_footnote {
+#bjhyknncsk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1106,7 +1109,7 @@ Attaching package: 'renv'</code></pre>
   padding-right: 5px;
 }
 
-#rhkwontwts .gt_sourcenotes {
+#bjhyknncsk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1120,7 +1123,7 @@ Attaching package: 'renv'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#rhkwontwts .gt_sourcenote {
+#bjhyknncsk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1128,63 +1131,63 @@ Attaching package: 'renv'</code></pre>
   padding-right: 5px;
 }
 
-#rhkwontwts .gt_left {
+#bjhyknncsk .gt_left {
   text-align: left;
 }
 
-#rhkwontwts .gt_center {
+#bjhyknncsk .gt_center {
   text-align: center;
 }
 
-#rhkwontwts .gt_right {
+#bjhyknncsk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rhkwontwts .gt_font_normal {
+#bjhyknncsk .gt_font_normal {
   font-weight: normal;
 }
 
-#rhkwontwts .gt_font_bold {
+#bjhyknncsk .gt_font_bold {
   font-weight: bold;
 }
 
-#rhkwontwts .gt_font_italic {
+#bjhyknncsk .gt_font_italic {
   font-style: italic;
 }
 
-#rhkwontwts .gt_super {
+#bjhyknncsk .gt_super {
   font-size: 65%;
 }
 
-#rhkwontwts .gt_footnote_marks {
+#bjhyknncsk .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rhkwontwts .gt_asterisk {
+#bjhyknncsk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rhkwontwts .gt_indent_1 {
+#bjhyknncsk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rhkwontwts .gt_indent_2 {
+#bjhyknncsk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rhkwontwts .gt_indent_3 {
+#bjhyknncsk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rhkwontwts .gt_indent_4 {
+#bjhyknncsk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rhkwontwts .gt_indent_5 {
+#bjhyknncsk .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1254,21 +1257,13 @@ Attaching package: 'renv'</code></pre>
 <section id="part-iiiiv-make-a-histogram-of-the-ages-of-congress-by-political-party-using-a-function-to-calculate-the-mean-standard-deviation-of-congress-members-age-by-meeting" class="level2">
 <h2 class="anchored" data-anchor-id="part-iiiiv-make-a-histogram-of-the-ages-of-congress-by-political-party-using-a-function-to-calculate-the-mean-standard-deviation-of-congress-members-age-by-meeting">Part III/IV: Make a Histogram of the Ages of Congress by Political party &amp; using a Function to Calculate the Mean &amp; Standard Deviation of Congress Members Age by Meeting</h2>
 <div class="cell" data-output-location="slide">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(incumbentcongress<span class="sc">$</span>age)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>stats <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">n=</span><span class="fu">nrow</span>(incumbentcongress),</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">mean_age =</span> <span class="fu">mean</span>(incumbentcongress<span class="sc">$</span>age))</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>stats2 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">n=</span><span class="fu">nrow</span>(incumbentcongress),</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">std_age =</span> <span class="fu">sd</span>(incumbentcongress<span class="sc">$</span>age))</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>stats<span class="sc">$</span>mean_age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 57.91428</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>stats2<span class="sc">$</span>std_age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 10.03434</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(incumbentcongress<span class="sc">$</span>age)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>stats <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">n=</span><span class="fu">nrow</span>(incumbentcongress),</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">mean_age =</span> <span class="fu">mean</span>(incumbentcongress<span class="sc">$</span>age))</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>stats2 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">n=</span><span class="fu">nrow</span>(incumbentcongress),</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">std_age =</span> <span class="fu">sd</span>(incumbentcongress<span class="sc">$</span>age))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-hist" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">

@@ -101,8 +101,6 @@ stats <- list(n=nrow(incumbentcongress),
 
 stats2 <- list(n=nrow(incumbentcongress),
               std_age = sd(incumbentcongress$age))
-stats$mean_age
-stats2$std_age
 ```
 
 @fig-hist presents a normal distribution of the ages of congress members.
