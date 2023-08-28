@@ -1,5 +1,5 @@
 ---
-title: "FinalProject"
+title: "EPI590R: Final Project"
 author: "Dannelle Charles"
 format: html
 ---
@@ -18,8 +18,6 @@ library (renv)
 library (tidyverse)
 library (here)
 #| include: false
-
-renv:snapshot()
 
 data <- read.csv(here::here("congress-age", "congress-terms.csv"))
 
@@ -89,7 +87,7 @@ tbl_regression(
   ))
 ```
 
-## Part III/IV: Make Histogram of the Ages of Congress by Political party & using a Function to Calculate the Mean & Standard Deviation of Congress Members Age by Meeting
+## Part III/IV: Make a Histogram of the Ages of Congress by Political party & using a Function to Calculate the Mean & Standard Deviation of Congress Members Age by Meeting
 
 ```{r}
 #| label: fig-hist
@@ -99,13 +97,14 @@ tbl_regression(
 hist(incumbentcongress$age)
 
 stats <- list(n=nrow(incumbentcongress),
-              mean_age=mean(incumbentcongress$age))
+              mean_age = mean(incumbentcongress$age))
 
 stats2 <- list(n=nrow(incumbentcongress),
-              std_age=sd(incumbentcongress$age))
-
+              std_age = sd(incumbentcongress$age))
+stats$mean_age
+stats2$std_age
 ```
 
 @fig-hist presents a normal distribution of the ages of congress members.
 
-The mean age of Congress members is (`r stats$meanage`) and the standard deviation of Congress members is (`r stats2$stdage`)
+The mean age of Congress members is `r stats$mean_age` and the standard deviation of Congress members is `r stats2$std_age`.
